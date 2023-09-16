@@ -29,7 +29,7 @@ License: Apache License Version 2.0
 Licensor: Torqware LLC
 ~~~
 
-## Apache License, Version 2.0
+## Apache License Version 2.0
 
 ~~~
                                  Apache License
