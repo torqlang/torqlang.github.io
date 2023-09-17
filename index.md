@@ -4,11 +4,11 @@
 
 ### Why? 
 
-Concurrent programming is notoriously hard. Mainstream programming languages require explicit control structures, resulting in unnatural, complex and tangled programs.
+Mainstream programming languages require explicit control structures, resulting in unnatural, complex, and tangled programs.
 
 ### How?
 
-Torqlang solves this problem with a patent-pending programming model, called Actorflow, that fuses message-passing concurrency with declarative dataflow, giving us a sequential style that is otherwise impossible in mainstream programming languages.
+Torqlang solves this problem with a patent-pending programming model called Actorflow, which fuses message-passing concurrency with declarative dataflow, giving us a sequential style that is otherwise impossible in mainstream programming languages.
 
 ### Where?
 
