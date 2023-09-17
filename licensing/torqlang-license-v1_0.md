@@ -2,7 +2,7 @@
 
 Copyright (c) 2023 Torqware LLC. All rights reserved.
 
-Torqlang is not "open source" as defined by the Open Source Initiative. The Torqlang License is a "source available" license comprised, as defined below, of the Apache License Version 2.0 and the "Commons Clause" License Condition v1.0.
+The Torqlang License is a "source available" license comprised, as defined below, of the Apache License Version 2.0 and the "Commons Clause" License Condition v1.0.
 
 ## "Commons Clause" License Condition v1.0
 
