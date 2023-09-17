@@ -1,6 +1,6 @@
 # Torqlang
 
-## A fantastically simple approach to concurrent programming
+## A fantastically simple approach to concurrent programming.
 
 Mainstream programming languages are complex and unnatural for orchestrating concurrency because they require explicit control structures, resulting in complex and tangled programs. Torqlang solves this problem with a new programming model that replaces explicit control structures with implicit synchronization, making a sequential style that is fantastically simple but otherwise impossible in mainstream languages.
 
