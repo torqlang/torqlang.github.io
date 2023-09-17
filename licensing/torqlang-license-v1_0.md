@@ -1,4 +1,4 @@
-# Torqlang License 1.0
+# Torqlang License v1.0
 
 Copyright (c) 2023 Torqware LLC. All rights reserved.
 
