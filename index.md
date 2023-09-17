@@ -2,7 +2,17 @@
 
 ## A fantastically simple approach to concurrent programming.
 
-Mainstream programming languages are complex and unnatural for orchestrating concurrency because they require explicit control structures, resulting in complex and tangled programs. Torqlang solves this problem with a new programming model that replaces explicit control structures with implicit synchronization, making a sequential style that is fantastically simple but otherwise impossible in mainstream languages.
+### Why? 
+
+Concurrent programming is notoriously hard. Mainstream programming languages require explicit control structures, resulting in unnatural, complex and tangled programs.
+
+### How?
+
+Torqlang solves this problem with a patent-pending programming model, called Actorflow, that fuses message-passing concurrency with declarative dataflow, giving us a sequential style that is impossible to program in mainstream languages.
+
+### Where?
+
+Torqlang is a "source available" project hosted at GitHub.
 
 License: [Torqlang License v1.0](licensing/torqlang-license-v1_0)
 
