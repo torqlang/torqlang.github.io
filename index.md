@@ -8,7 +8,7 @@ Concurrent programming is notoriously hard. Mainstream programming languages req
 
 ### How?
 
-Torqlang solves this problem with a patent-pending programming model, called Actorflow, that fuses message-passing concurrency with declarative dataflow, giving us a sequential style that is impossible to program in mainstream languages.
+Torqlang solves this problem with a patent-pending programming model, called Actorflow, that fuses message-passing concurrency with declarative dataflow, giving us a sequential style that is otherwise impossible in mainstream programming languages.
 
 ### Where?
 
