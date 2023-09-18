@@ -8,7 +8,7 @@ Mainstream programming languages require explicit control structures, resulting 
 
 ### How?
 
-Torqlang solves this problem with a patent-pending programming model called Actorflow, which fuses message-passing concurrency with declarative dataflow, giving us a sequential style that is otherwise impossible in mainstream programming languages.
+Torqlang solves this problem with a patent-pending programming model called Actorflow, which fuses message-passing concurrency with declarative dataflow, giving us a naturally sequential style void of unnecessary complexity.
 
 ### Where?
 
