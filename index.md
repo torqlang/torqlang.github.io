@@ -6,7 +6,7 @@ A fantastically simple approach to concurrent programming.
 
 Mainstream programming languages require explicit control structures, resulting in unnatural, complex, and tangled programs.
 
-Torqlang solves this problem with a patent-pending programming model named *Actorflow*, which fuses message-passing concurrency with declarative dataflow, giving us a naturally sequential style void of unnecessary complexity.
+Torqlang solves this problem with a patent-pending programming model named *Actorflow*, which fuses message-passing concurrency with declarative dataflow, giving us a naturally sequential style without unnecessary complexity.
 
 Torqlang is a "source available" project hosted at GitHub.
 
