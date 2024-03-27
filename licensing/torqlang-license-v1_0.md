@@ -1,6 +1,6 @@
 # Torqlang License v1.0
 
-Copyright (c) 2023 Torqware LLC. All rights reserved.
+Copyright (c) 2024 Torqware LLC. All rights reserved.
 
 The Torqlang License is a "source available" license comprised, as defined below, of the Apache License Version 2.0 and the "Commons Clause" License Condition v1.0.
 
