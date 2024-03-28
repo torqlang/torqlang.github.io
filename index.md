@@ -151,6 +151,12 @@ actor SumOddIntsStream() in
 end
 ~~~
 
+How can Torqlang support this natural programming style? Implicit synchronization is how. All previously mentioned languages and frameworks use explicit synchronization organized around constructs such as mailboxes, channels, monads, continuation functions, and callbacks. In Torqlang, actors and procedures share data without synchronization because data variables are based on declarative dataflow.
+
+The declarative dataflow model ([Van-Roy, P., & Haridi, S., 2004](#van-roy-p-haridi-s-2004)) is a lesser known programming model but highly appealing because of its naturally sequential style. Borrowed from logic programming, declarative dataflow computes over a single-assignment variable called the dataflow variable. This variable is initially unbound, but once bound, it is immutable. Threads that produce information bind dataflow variables, and threads that consume information suspend until dataflow variables are bound. This semantic rule describes a producer-consumer interaction that implicitly synchronizes access to shared memory. Unfortunately, adopting declarative dataflow is highly disruptive because it requires runtime architectures to redefine for all processes the semantics of a memory variable.
+
+Torqlang differentiates itself from mainstream languages and declarative dataflow by fusing a message-passing protocol with a hidden implementation of declarative dataflow. Concurrently executing actors only communicate by sending immutable messages. Requests and responses are correlated with private dataflow variables, bound indirectly by a controller. Actors that send requests may suspend, waiting for a dataflow variable bound by a response. Actors that receive messages may resume when a message received binds a waiting dataflow variable. This request-response interaction provides synchronization without sharing variables while giving us a *naturally sequential programming style*. Additionally, we can write a system of actors using a mix of frameworks. All variables, dataflow or otherwise, are hidden. We named this new patent-pending model *Actorflow*.
+
 # References
 
 Crichton, W., Gray, G., & Krishnamurthi, S. (2023). A Grounded Conceptual Model for Ownership Types in Rust. arXiv preprint arXiv:2309.04134.
@@ -160,5 +166,7 @@ Kunicki, Jacek (2019). How (Not) to use reactive Streams in Java 9+. https://www
 Lee, E. A. (2006). The problem with threads. Computer, 39(5), 33-42.
 
 Leger, P., Fukuda, H., & Figueroa, I. (2021). Continuations and Aspects to Tame Callback Hell on the Web. Journal of Universal Computer Science, 27(9), 955-978.
+
+Van-Roy, P., & Haridi, S. (2004). Concepts, techniques, and models of computer programming. MIT press.
 
 Wadler, P. (1992, February). The essence of functional programming. In Proceedings of the 19th ACM SIGPLAN-SIGACT symposium on Principles of programming languages (pp. 1-14).
