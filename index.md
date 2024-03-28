@@ -26,7 +26,7 @@ Book: [Torqlang at Leanpub](https://leanpub.com/torqlang)
 
 ### Preface
 
-Like many of you, I programmed sequentially for years with an occasional thread, enjoying the performance gains as processors evolved faster and faster. Then, processors began evolving to be more and more parallel. I became painfully aware that my programming style was not the future. Concurrent programming with shared state had been declared a failure (Lee (2006)), and I needed to learn a new programming model.
+Like many of you, I programmed sequentially for years with an occasional thread, enjoying the performance gains as processors evolved faster and faster. Then, processors began evolving to be more and more parallel. I became painfully aware that my programming style was not the future. Concurrent programming with shared state had been declared a failure (Lee, 2006), and I needed to learn a new programming model.
 
 A colleague introduced me to an early version of Scala that contained actors. Programming in Scala opened my eyes to a new world of actors, monads, and multi-paradigm programming. I worked hard and became confident in this new environment, but the applications that I produced were confusing. Instead of forming a business solution, my programs formed a concurrency solution. Intellectually, I liked the power and sophistication of this new environment, but the results felt wrong. Writing application code, especially for business applications, should be easy, and the results should express the solution clearly without requiring special knowledge.
 
