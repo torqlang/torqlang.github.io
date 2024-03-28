@@ -21,9 +21,8 @@ License: [Torqlang License v1.0](http://torqlang.github.io/licensing/torqlang-li
 Repository: [Torqlang at GitHub](https://github.com/torqlang)
 
 Book: [Torqlang at Leanpub](https://leanpub.com/torqlang)
-## The Book
 
-Book: [Torqlang at Leanpub](https://leanpub.com/torqlang)
+## The Book (sample)
 
 ### Preface
 
@@ -67,7 +66,14 @@ These languages and frameworks provide safe alternatives to programming with thr
 
 > Rust also supports shared state concurrency, but with a twist. Rust imposes an ownership model over shared state concurrency. The Rust ownership model is not easy, but it is safe ([Crichton et al., 2023](#crichton-w-gray-g-krishnamurthi-s-2023)). Rust concurrency organizes code around ownership enforced implicitly by the compiler instead of using explicit language constructs.
 
-In contrast to the languages previously mentioned, consider the following example written in Torqlang. The actor `SimpleMathActor` calculates the number `7` concurrently using three child actors to supply the operands in `1 + 2 * 3`. This example is an unsafe race condition in mainstream languages. However, in Torqlang, this naturally sequential code will always calculate `7`. Notice that Torqlang honors operator precedence without explicit synchronization.
+Citations:
+* Behaviors as finite state machines. "The events the FSM can receive become the type of message the Actor can receive." ([Akka documentation](https://doc.akka.io/docs/akka/current/typed/fsm.html))
+* The essence of functional programming. "Shall I be pure or impure?" ([Wadler 1992](#wadler-p-1992-february), [pdf](https://dl.acm.org/doi/pdf/10.1145/143165.143169))
+* Continuations and Aspects to Tame Callback Hell on the Web ([Leger et al., 2021](#leger-p-fukuda-h-figueroa-i-2021))
+
+In contrast, consider the following example written in Torqlang. The actor `SimpleMathActor` calculates the number `7` concurrently using three child actors to supply the operands in the expression `1 + 2 * 3`. This example is an unsafe race condition in mainstream languages. However, in Torqlang, this naturally sequential code will always calculate `7`. Notice that Torqlang honors operator precedence without explicit synchronization.
+
+> An actor is delimited using `actor <<configurator>>() in <<statements>> end` and its protocol consists of `ask` and `tell` handlers.
 
 ~~~
 actor SimpleMathActor() in
@@ -85,7 +91,7 @@ actor SimpleMathActor() in
 end
 ~~~
 
-Consider the next example. The actor `NestedMathActs` employs four child actors, two levels deep, to perform its calculation concurrently. This example uses syntactic sugar `act ... end` to define single-performance actors. This naturally sequential code will always calculate `35`.
+Next, consider `NestedMathActs` that employs four child actors, two levels deep, to perform its calculation concurrently. This example uses syntactic sugar `act <<statements>> end` to define single-performance actors. This naturally sequential code will always calculate `35`.
 
 ~~~
 actor NestedMathActs() in
@@ -100,7 +106,7 @@ actor NestedMathActs() in
 end
 ~~~
 
-Finally, consider the example that sums a sequence of odd numbers using a reactive stream with back pressure. In Torqlang, reactive streams are programmed entirely as a single-request multiple-response interaction, but the result is an asynchronous, non-blocking, multi-threaded program. In contrast, reactive streams in Java 9+ are implemented by service providers and consumed by application programmers ([Kunicki, 2019](#kunicki_jacek_2019)).
+What about streaming data? `SumOddIntsStream` uses `IntPublisher`  to sum a sequence of odd numbers using a reactive stream. In Torqlang, reactive streams with back pressure are programmed entirely as a single-request multiple-response interaction, but the result is an asynchronous, non-blocking, multi-threaded program. In contrast, reactive streams in Java 9+ are best implemented by service providers and consumed by application programmers ([Kunicki, 2019](#kunicki_jacek_2019)).
 
 *Publisher*
 
@@ -146,3 +152,12 @@ actor SumOddIntsStream() in
     end
 end
 ~~~
+
+{#crichton-w-gray-g-krishnamurthi-s-2023}
+Crichton, W., Gray, G., & Krishnamurthi, S. (2023). A Grounded Conceptual Model for Ownership Types in Rust. arXiv preprint arXiv:2309.04134.
+
+{#leger-p-fukuda-h-figueroa-i-2021}
+Leger, P., Fukuda, H., & Figueroa, I. (2021). Continuations and Aspects to Tame Callback Hell on the Web. Journal of Universal Computer Science, 27(9), 955-978.
+
+{#wadler-p-1992-february}
+Wadler, P. (1992, February). The essence of functional programming. In Proceedings of the 19th ACM SIGPLAN-SIGACT symposium on Principles of programming languages (pp. 1-14).
