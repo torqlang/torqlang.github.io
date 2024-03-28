@@ -26,9 +26,7 @@ Book: [Torqlang at Leanpub](https://leanpub.com/torqlang)
 
 ### Preface
 
-Like many of you, I programmed sequentially for years with an occasional thread, enjoying the performance gains as processors evolved faster and faster. Then, processors began evolving to be more and more parallel. I became painfully aware that my programming style was not the future. Concurrent programming with shared state had been declared a failure[^threads_failure], and I needed to learn a new programming model.
-
-[^threads_failure]: [The Problem With Threads](<https://www2.eecs.berkeley.edu/Pubs/TechRpts/2006/EECS-2006-1.html>)
+Like many of you, I programmed sequentially for years with an occasional thread, enjoying the performance gains as processors evolved faster and faster. Then, processors began evolving to be more and more parallel. I became painfully aware that my programming style was not the future. Concurrent programming with shared state had been declared a failure (Lee (2006)), and I needed to learn a new programming model.
 
 A colleague introduced me to an early version of Scala that contained actors. Programming in Scala opened my eyes to a new world of actors, monads, and multi-paradigm programming. I worked hard and became confident in this new environment, but the applications that I produced were confusing. Instead of forming a business solution, my programs formed a concurrency solution. Intellectually, I liked the power and sophistication of this new environment, but the results felt wrong. Writing application code, especially for business applications, should be easy, and the results should express the solution clearly without requiring special knowledge.
 
@@ -153,11 +151,14 @@ actor SumOddIntsStream() in
 end
 ~~~
 
-{#crichton-w-gray-g-krishnamurthi-s-2023}
+# References
+
 Crichton, W., Gray, G., & Krishnamurthi, S. (2023). A Grounded Conceptual Model for Ownership Types in Rust. arXiv preprint arXiv:2309.04134.
 
-{#leger-p-fukuda-h-figueroa-i-2021}
+Kunicki, Jacek (2019). How (Not) to use reactive Streams in Java 9+. https://www.youtube.com/watch?v=zf_0ydYb3JQ.
+
+Lee, E. A. (2006). The problem with threads. Computer, 39(5), 33-42.
+
 Leger, P., Fukuda, H., & Figueroa, I. (2021). Continuations and Aspects to Tame Callback Hell on the Web. Journal of Universal Computer Science, 27(9), 955-978.
 
-{#wadler-p-1992-february}
 Wadler, P. (1992, February). The essence of functional programming. In Proceedings of the 19th ACM SIGPLAN-SIGACT symposium on Principles of programming languages (pp. 1-14).
