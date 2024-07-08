@@ -8,7 +8,7 @@ Concurrent programming is notoriously hard. Mainstream programming languages req
 
 ### How?
 
-Torqlang solves this problem with a patent-pending programming model, named Actorflow, that fuses message-passing concurrency with declarative dataflow, giving us a naturally sequential style that is impossible to obtain in mainstream languages.
+Torqlang solves this problem with a patent-pending programming model, named Actorflow, that fuses message-passing concurrency with declarative dataflow, giving us a naturally sequential style that is impossible to achieve in mainstream languages.
 
 ### Where?
 
@@ -76,14 +76,14 @@ In contrast, consider the following example written in Torqlang. The actor `Simp
 ~~~
 actor SimpleMathActor() in
     actor Number(n) in
-        ask 'get' in
+        handle ask 'get' in
             n
         end
     end
     var one = spawn(Number.cfg(1)),
         two = spawn(Number.cfg(2)),
         three = spawn(Number.cfg(3))
-    ask 'calculate' in
+    handle ask 'calculate' in
         one.ask('get') + two.ask('get') * three.ask('get')
     end
 end
@@ -93,7 +93,7 @@ Next, consider `NestedMathActs` that employs four child actors, two levels deep,
 
 ~~~
 actor NestedMathActs() in
-    ask 'calculate' in
+    handle ask 'calculate' in
         var a, b, c, d
         a = act b + c + act d + 11 end end
         c = act b + d end
@@ -112,7 +112,7 @@ What about streaming data? `SumOddIntsStream` uses `IntPublisher`  to sum a sequ
 actor IntPublisher(first, last) in
     import system[ArrayList, Cell, respond]
     var next_int = Cell.new(first)
-    ask 'request'#{'count': n} in
+    handle ask 'request'#{'count': n} in
         func calculate_to() in
             var to = @next_int + (n - 1)
             if to < last then to else last end
@@ -139,7 +139,7 @@ end
 actor SumOddIntsStream() in
     import system[Cell, Iter, Stream]
     import examples.IntPublisher
-    ask 'sum'#{'first': first, 'last': last} in
+    handle ask 'sum'#{'first': first, 'last': last} in
         var sum = Cell.new(0)
         var int_publisher = spawn(IntPublisher.cfg(first, last))
         var int_stream = Stream.new(int_publisher, 'request'#{'count': 3})
